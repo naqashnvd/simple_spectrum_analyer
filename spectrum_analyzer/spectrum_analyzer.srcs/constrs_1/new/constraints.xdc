@@ -1,0 +1,1 @@
+create_clock -period 10.00 -name clk -waveform {0.000 5.000} [get_ports design_1_i/processing_system7_0_FCLK_CLK0];

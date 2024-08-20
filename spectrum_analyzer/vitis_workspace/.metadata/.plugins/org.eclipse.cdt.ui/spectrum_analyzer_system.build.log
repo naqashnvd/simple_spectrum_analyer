@@ -1,0 +1,11 @@
+03:21:59 **** Incremental Build of configuration Debug for project spectrum_analyzer_system ****
+make all 
+Generating bif file for the system project
+generate_system_bif.bat 52837 D:/Work/Hobby_proj/spectrum_analyzer/vitis_workspace/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm standalone_domain D:/Work/Hobby_proj/spectrum_analyzer/vitis_workspace/spectrum_analyzer_system/Debug/system.bif
+sdcard_gen --xpfm D:/Work/Hobby_proj/spectrum_analyzer/vitis_workspace/design_1_wrapper/export/design_1_wrapper/design_1_wrapper.xpfm --sys_config design_1_wrapper --bif D:/Work/Hobby_proj/spectrum_analyzer/vitis_workspace/spectrum_analyzer_system/Debug/system.bif --bitstream D:/Work/Hobby_proj/spectrum_analyzer/vitis_workspace/spectrum_analyzer/_ide/bitstream/design_1_wrapper.bit --elf D:/Work/Hobby_proj/spectrum_analyzer/vitis_workspace/spectrum_analyzer/Debug/spectrum_analyzer.elf,ps7_cortexa9_0
+creating BOOT.BIN using D:/Work/Hobby_proj/spectrum_analyzer/vitis_workspace/spectrum_analyzer/_ide/bitstream/design_1_wrapper.bit
+Error intializing SD boot data : Software platform XML error, sdx:qemuArguments value "design_1_wrapper/qemu/qemu_args.txt" path does not exist D:/Work/Hobby_proj/spectrum_analyzer/vitis_workspace/design_1_wrapper/export/design_1_wrapper/sw/design_1_wrapper/qemu/qemu_args.txt, platform path D:/Work/Hobby_proj/spectrum_analyzer/vitis_workspace/design_1_wrapper/export/design_1_wrapper, sdx:configuration design_1_wrapper, sdx:image standard
+make: *** [makefile:37: sd_card] Error 1
+
+03:22:02 Build Finished (took 2s.666ms)
+

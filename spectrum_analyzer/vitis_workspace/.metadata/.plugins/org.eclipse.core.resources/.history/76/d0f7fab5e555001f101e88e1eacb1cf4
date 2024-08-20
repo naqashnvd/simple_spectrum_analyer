@@ -1,0 +1,60 @@
+
+#include <stdio.h>
+#include "platform.h"
+#include "xil_printf.h"
+#include "xil_io.h"
+#include "inttypes.h"
+
+#define DEBUG
+
+// DONOT CHANGE //
+//////////////////
+#ifdef DEBUG
+	#define PRINT(fmt, ...)  printf(fmt, __VA_ARGS__);
+#else
+	#define PRINT(fmt, ...)
+#endif
+
+
+#define ADDR_SET_PHASE_OFFSET XPAR_AXI_GPIO_0_BASEADDR
+#define M 1000000	// 10^6 Mega
+#define DDS_FREQ 100 * M
+#define DDS_OUTPUT_BITS 16
+
+
+// Function to set the frequency of DDS //
+//////////////////////////////////////////
+
+uint8_t set_dds_freq(uint64_t freq, uint32_t phase_offset){
+
+	uint64_t pinc;
+	uint16_t poff;
+	uint32_t data;
+
+	pinc = ((freq * (1 << DDS_OUTPUT_BITS)) / DDS_FREQ);
+
+	poff = 0;
+
+	data = ((uint32_t)poff << 16) | ((uint32_t)pinc);
+
+	Xil_Out32(ADDR_SET_PHASE_OFFSET, data);
+	Xil_Out32(ADDR_SET_PHASE_OFFSET, 0);
+	Xil_Out32(ADDR_SET_PHASE_OFFSET, data);
+	PRINT("set_dds_freq: %"PRIu32"\n\r", data);
+
+	return 1;
+}
+
+
+
+int main()
+{
+    init_platform();
+
+    set_dds_freq(1*M, 0);
+
+    print("Hello World\n\r");
+
+    cleanup_platform();
+    return 0;
+}

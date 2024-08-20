@@ -1,0 +1,10 @@
+2024-08-10T01:34:05.543162900255-01:34:05 **** Incremental Build of configuration Debug for project sw_spectrum ****
+000-make all 
+000-make --no-print-directory pre-build
+000-a9-linaro-pre-build-step
+000-' '
+000-make --no-print-directory main-build
+000-make[1]: Nothing to be done for 'main-build'.
+00255-
+01:34:05 Build Finished (took 179ms)
+
