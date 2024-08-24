@@ -1439,3 +1439,216 @@ con
 
 01:34:13 INFO  : Launch script is exported to file 'D:\Work\Hobby_proj\spectrum_analyzer\vitis_workspace\.sdk\launch_scripts\single_application_debug\run_sw_spectrum.tcl'
 01:39:08 INFO  : Disconnected from the channel tcfchan#41.
+19:27:49 INFO  : Launching XSCT server: xsct.bat -n  -interactive D:\Work\Hobby_proj\simple_spectrum_analyzer\spectrum_analyzer\vitis_workspace\temp_xsdb_launch_script.tcl
+19:27:51 INFO  : XSCT server has started successfully.
+19:27:51 INFO  : plnx-install-location is set to ''
+19:27:51 INFO  : Successfully done setting XSCT server connection channel  
+19:27:51 INFO  : Successfully done setting workspace for the tool. 
+19:27:51 INFO  : Successfully done query RDI_DATADIR 
+19:27:51 INFO  : Registering command handlers for Vitis TCF services
+19:38:43 ERROR : Hardware specification file is not configured properly in the launch configuration 'run_sw_spectrum'. 
+Make sure that the application 'sw_spectrum' is built properly for configuration 'Debug' before launching.
+19:39:05 ERROR : Hardware specification file is not configured properly in the launch configuration 'run_sw_spectrum'. 
+Make sure that the application 'sw_spectrum' is built properly for configuration 'Debug' before launching.
+19:39:46 INFO  : Hardware specification for platform project 'design_1_wrapper_1' is updated.
+19:40:19 INFO  : Checking for BSP changes to sync application flags for project 'sw_spectrum'...
+19:41:08 INFO  : Hardware specification for platform project 'design_1_wrapper_1' is updated.
+19:41:13 INFO  : Checking for BSP changes to sync application flags for project 'sw_spectrum'...
+19:41:15 INFO  : The hardware specfication used by project 'sw_spectrum' is out of sync with the platform. Resource files extracted from the hardware specfiication will be updated.
+19:41:15 INFO  : The file 'D:\Work\Hobby_proj\simple_spectrum_analyzer\spectrum_analyzer\vitis_workspace\sw_spectrum\_ide\bitstream\design_1_wrapper.bit' stored in project is removed.
+19:41:15 INFO  : The updated bitstream files are copied from platform to folder 'D:\Work\Hobby_proj\simple_spectrum_analyzer\spectrum_analyzer\vitis_workspace\sw_spectrum\_ide\bitstream' in project 'sw_spectrum'.
+19:41:15 INFO  : The file 'D:\Work\Hobby_proj\simple_spectrum_analyzer\spectrum_analyzer\vitis_workspace\sw_spectrum\_ide\psinit\ps7_init.tcl' stored in project is removed.
+19:41:19 INFO  : The updated ps init files are copied from platform to folder 'D:\Work\Hobby_proj\simple_spectrum_analyzer\spectrum_analyzer\vitis_workspace\sw_spectrum\_ide\psinit' in project 'sw_spectrum'.
+19:44:44 INFO  : Successfully done sdx_reload_mss "D:/Work/Hobby_proj/simple_spectrum_analyzer/spectrum_analyzer/vitis_workspace/design_1_wrapper_1/zynq_fsbl/zynq_fsbl_bsp/system.mss"
+19:44:44 INFO  : Successfully done sdx_reload_mss "D:/Work/Hobby_proj/simple_spectrum_analyzer/spectrum_analyzer/vitis_workspace/design_1_wrapper_1/ps7_cortexa9_0/standalone_domain/bsp/system.mss"
+19:47:14 INFO  : Hardware specification for platform project 'design_1_wrapper_1' is updated.
+19:47:15 INFO  : Successfully done sdx_reload_mss "D:/Work/Hobby_proj/simple_spectrum_analyzer/spectrum_analyzer/vitis_workspace/design_1_wrapper_1/zynq_fsbl/zynq_fsbl_bsp/system.mss"
+19:47:16 INFO  : Successfully done sdx_reload_mss "D:/Work/Hobby_proj/simple_spectrum_analyzer/spectrum_analyzer/vitis_workspace/design_1_wrapper_1/ps7_cortexa9_0/standalone_domain/bsp/system.mss"
+19:49:02 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:49:03 INFO  : Jtag cable 'Xilinx PYNQ-Z1 003017AD430FA' is selected.
+19:49:03 INFO  : 'jtag frequency' command is executed.
+19:49:03 INFO  : Context for 'APU' is selected.
+19:49:03 INFO  : System reset is completed.
+19:49:06 INFO  : 'after 3000' command is executed.
+19:49:06 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD430FA" && level==0} -index 1' command is executed.
+19:49:08 INFO  : FPGA configured successfully with bitstream "D:/Work/Hobby_proj/simple_spectrum_analyzer/spectrum_analyzer/vitis_workspace/sw_spectrum/_ide/bitstream/design_1_wrapper.bit"
+19:49:08 INFO  : Context for 'APU' is selected.
+19:49:08 INFO  : Hardware design information is loaded from 'D:/Work/Hobby_proj/simple_spectrum_analyzer/spectrum_analyzer/vitis_workspace/design_1_wrapper_1/export/design_1_wrapper_1/hw/design_1_wrapper.xsa'.
+19:49:08 INFO  : 'configparams force-mem-access 1' command is executed.
+19:49:08 INFO  : Context for 'APU' is selected.
+19:49:08 INFO  : Sourcing of 'D:/Work/Hobby_proj/simple_spectrum_analyzer/spectrum_analyzer/vitis_workspace/sw_spectrum/_ide/psinit/ps7_init.tcl' is done.
+19:49:08 INFO  : 'ps7_init' command is executed.
+19:49:08 INFO  : 'ps7_post_config' command is executed.
+19:49:08 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:49:09 INFO  : The application 'D:/Work/Hobby_proj/simple_spectrum_analyzer/spectrum_analyzer/vitis_workspace/sw_spectrum/Debug/sw_spectrum.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:49:09 INFO  : 'configparams force-mem-access 0' command is executed.
+19:49:09 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD430FA" && level==0} -index 1
+fpga -file D:/Work/Hobby_proj/simple_spectrum_analyzer/spectrum_analyzer/vitis_workspace/sw_spectrum/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/Work/Hobby_proj/simple_spectrum_analyzer/spectrum_analyzer/vitis_workspace/design_1_wrapper_1/export/design_1_wrapper_1/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/Work/Hobby_proj/simple_spectrum_analyzer/spectrum_analyzer/vitis_workspace/sw_spectrum/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/Work/Hobby_proj/simple_spectrum_analyzer/spectrum_analyzer/vitis_workspace/sw_spectrum/Debug/sw_spectrum.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:49:09 INFO  : Memory regions updated for context APU
+19:49:09 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:49:09 INFO  : 'con' command is executed.
+19:49:09 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+19:49:09 INFO  : Launch script is exported to file 'D:\Work\Hobby_proj\simple_spectrum_analyzer\spectrum_analyzer\vitis_workspace\.sdk\launch_scripts\single_application_debug\run_sw_spectrum.tcl'
+19:49:18 INFO  : Disconnected from the channel tcfchan#8.
+19:49:19 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:49:19 INFO  : Jtag cable 'Xilinx PYNQ-Z1 003017AD430FA' is selected.
+19:49:19 INFO  : 'jtag frequency' command is executed.
+19:49:19 INFO  : Context for 'APU' is selected.
+19:49:19 INFO  : System reset is completed.
+19:49:22 INFO  : 'after 3000' command is executed.
+19:49:22 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD430FA" && level==0} -index 1' command is executed.
+19:49:24 INFO  : FPGA configured successfully with bitstream "D:/Work/Hobby_proj/simple_spectrum_analyzer/spectrum_analyzer/vitis_workspace/sw_spectrum/_ide/bitstream/design_1_wrapper.bit"
+19:49:24 INFO  : Context for 'APU' is selected.
+19:49:24 INFO  : Hardware design information is loaded from 'D:/Work/Hobby_proj/simple_spectrum_analyzer/spectrum_analyzer/vitis_workspace/design_1_wrapper_1/export/design_1_wrapper_1/hw/design_1_wrapper.xsa'.
+19:49:24 INFO  : 'configparams force-mem-access 1' command is executed.
+19:49:24 INFO  : Context for 'APU' is selected.
+19:49:24 INFO  : Sourcing of 'D:/Work/Hobby_proj/simple_spectrum_analyzer/spectrum_analyzer/vitis_workspace/sw_spectrum/_ide/psinit/ps7_init.tcl' is done.
+19:49:24 INFO  : 'ps7_init' command is executed.
+19:49:24 INFO  : 'ps7_post_config' command is executed.
+19:49:24 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:49:25 INFO  : The application 'D:/Work/Hobby_proj/simple_spectrum_analyzer/spectrum_analyzer/vitis_workspace/sw_spectrum/Debug/sw_spectrum.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:49:25 INFO  : 'configparams force-mem-access 0' command is executed.
+19:49:25 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD430FA" && level==0} -index 1
+fpga -file D:/Work/Hobby_proj/simple_spectrum_analyzer/spectrum_analyzer/vitis_workspace/sw_spectrum/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/Work/Hobby_proj/simple_spectrum_analyzer/spectrum_analyzer/vitis_workspace/design_1_wrapper_1/export/design_1_wrapper_1/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/Work/Hobby_proj/simple_spectrum_analyzer/spectrum_analyzer/vitis_workspace/sw_spectrum/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/Work/Hobby_proj/simple_spectrum_analyzer/spectrum_analyzer/vitis_workspace/sw_spectrum/Debug/sw_spectrum.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:49:25 INFO  : Memory regions updated for context APU
+19:49:25 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:49:25 INFO  : 'con' command is executed.
+19:49:25 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+19:49:25 INFO  : Launch script is exported to file 'D:\Work\Hobby_proj\simple_spectrum_analyzer\spectrum_analyzer\vitis_workspace\.sdk\launch_scripts\single_application_debug\run_sw_spectrum.tcl'
+19:51:22 INFO  : Disconnected from the channel tcfchan#9.
+19:51:23 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:51:23 INFO  : Jtag cable 'Xilinx PYNQ-Z1 003017AD430FA' is selected.
+19:51:23 INFO  : 'jtag frequency' command is executed.
+19:51:23 INFO  : Context for 'APU' is selected.
+19:51:23 INFO  : System reset is completed.
+19:51:26 INFO  : 'after 3000' command is executed.
+19:51:26 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD430FA" && level==0} -index 1' command is executed.
+19:51:29 INFO  : FPGA configured successfully with bitstream "D:/Work/Hobby_proj/simple_spectrum_analyzer/spectrum_analyzer/vitis_workspace/sw_spectrum/_ide/bitstream/design_1_wrapper.bit"
+19:51:29 INFO  : Context for 'APU' is selected.
+19:51:29 INFO  : Hardware design information is loaded from 'D:/Work/Hobby_proj/simple_spectrum_analyzer/spectrum_analyzer/vitis_workspace/design_1_wrapper_1/export/design_1_wrapper_1/hw/design_1_wrapper.xsa'.
+19:51:29 INFO  : 'configparams force-mem-access 1' command is executed.
+19:51:29 INFO  : Context for 'APU' is selected.
+19:51:29 INFO  : Sourcing of 'D:/Work/Hobby_proj/simple_spectrum_analyzer/spectrum_analyzer/vitis_workspace/sw_spectrum/_ide/psinit/ps7_init.tcl' is done.
+19:51:29 INFO  : 'ps7_init' command is executed.
+19:51:29 INFO  : 'ps7_post_config' command is executed.
+19:51:29 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:51:29 INFO  : The application 'D:/Work/Hobby_proj/simple_spectrum_analyzer/spectrum_analyzer/vitis_workspace/sw_spectrum/Debug/sw_spectrum.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:51:29 INFO  : 'configparams force-mem-access 0' command is executed.
+19:51:29 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD430FA" && level==0} -index 1
+fpga -file D:/Work/Hobby_proj/simple_spectrum_analyzer/spectrum_analyzer/vitis_workspace/sw_spectrum/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/Work/Hobby_proj/simple_spectrum_analyzer/spectrum_analyzer/vitis_workspace/design_1_wrapper_1/export/design_1_wrapper_1/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/Work/Hobby_proj/simple_spectrum_analyzer/spectrum_analyzer/vitis_workspace/sw_spectrum/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/Work/Hobby_proj/simple_spectrum_analyzer/spectrum_analyzer/vitis_workspace/sw_spectrum/Debug/sw_spectrum.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:51:29 INFO  : Memory regions updated for context APU
+19:51:29 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:51:29 INFO  : 'con' command is executed.
+19:51:29 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+19:51:29 INFO  : Launch script is exported to file 'D:\Work\Hobby_proj\simple_spectrum_analyzer\spectrum_analyzer\vitis_workspace\.sdk\launch_scripts\single_application_debug\run_sw_spectrum.tcl'
+19:54:45 INFO  : Disconnected from the channel tcfchan#10.
+19:54:46 INFO  : Connected to target on host '127.0.0.1' and port '3121'.
+19:54:46 INFO  : Jtag cable 'Xilinx PYNQ-Z1 003017AD430FA' is selected.
+19:54:46 INFO  : 'jtag frequency' command is executed.
+19:54:46 INFO  : Context for 'APU' is selected.
+19:54:46 INFO  : System reset is completed.
+19:54:49 INFO  : 'after 3000' command is executed.
+19:54:49 INFO  : 'targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD430FA" && level==0} -index 1' command is executed.
+19:54:51 INFO  : FPGA configured successfully with bitstream "D:/Work/Hobby_proj/simple_spectrum_analyzer/spectrum_analyzer/vitis_workspace/sw_spectrum/_ide/bitstream/design_1_wrapper.bit"
+19:54:51 INFO  : Context for 'APU' is selected.
+19:54:51 INFO  : Hardware design information is loaded from 'D:/Work/Hobby_proj/simple_spectrum_analyzer/spectrum_analyzer/vitis_workspace/design_1_wrapper_1/export/design_1_wrapper_1/hw/design_1_wrapper.xsa'.
+19:54:51 INFO  : 'configparams force-mem-access 1' command is executed.
+19:54:51 INFO  : Context for 'APU' is selected.
+19:54:51 INFO  : Sourcing of 'D:/Work/Hobby_proj/simple_spectrum_analyzer/spectrum_analyzer/vitis_workspace/sw_spectrum/_ide/psinit/ps7_init.tcl' is done.
+19:54:52 INFO  : 'ps7_init' command is executed.
+19:54:52 INFO  : 'ps7_post_config' command is executed.
+19:54:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:54:52 INFO  : The application 'D:/Work/Hobby_proj/simple_spectrum_analyzer/spectrum_analyzer/vitis_workspace/sw_spectrum/Debug/sw_spectrum.elf' is downloaded to processor 'ps7_cortexa9_0'.
+19:54:52 INFO  : 'configparams force-mem-access 0' command is executed.
+19:54:52 INFO  : ----------------XSDB Script----------------
+connect -url tcp:127.0.0.1:3121
+targets -set -nocase -filter {name =~"APU*"}
+rst -system
+after 3000
+targets -set -filter {jtag_cable_name =~ "Xilinx PYNQ-Z1 003017AD430FA" && level==0} -index 1
+fpga -file D:/Work/Hobby_proj/simple_spectrum_analyzer/spectrum_analyzer/vitis_workspace/sw_spectrum/_ide/bitstream/design_1_wrapper.bit
+targets -set -nocase -filter {name =~"APU*"}
+loadhw -hw D:/Work/Hobby_proj/simple_spectrum_analyzer/spectrum_analyzer/vitis_workspace/design_1_wrapper_1/export/design_1_wrapper_1/hw/design_1_wrapper.xsa -mem-ranges [list {0x40000000 0xbfffffff}]
+configparams force-mem-access 1
+targets -set -nocase -filter {name =~"APU*"}
+source D:/Work/Hobby_proj/simple_spectrum_analyzer/spectrum_analyzer/vitis_workspace/sw_spectrum/_ide/psinit/ps7_init.tcl
+ps7_init
+ps7_post_config
+targets -set -nocase -filter {name =~ "*A9*#0"}
+dow D:/Work/Hobby_proj/simple_spectrum_analyzer/spectrum_analyzer/vitis_workspace/sw_spectrum/Debug/sw_spectrum.elf
+configparams force-mem-access 0
+----------------End of Script----------------
+
+19:54:52 INFO  : Memory regions updated for context APU
+19:54:52 INFO  : Context for processor 'ps7_cortexa9_0' is selected.
+19:54:52 INFO  : 'con' command is executed.
+19:54:52 INFO  : ----------------XSDB Script (After Launch)----------------
+targets -set -nocase -filter {name =~ "*A9*#0"}
+con
+----------------End of Script----------------
+
+19:54:52 INFO  : Launch script is exported to file 'D:\Work\Hobby_proj\simple_spectrum_analyzer\spectrum_analyzer\vitis_workspace\.sdk\launch_scripts\single_application_debug\run_sw_spectrum.tcl'
+19:57:41 INFO  : Disconnected from the channel tcfchan#11.

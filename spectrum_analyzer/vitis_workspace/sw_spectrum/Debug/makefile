@@ -40,7 +40,7 @@ main-build: sw_spectrum.elf secondary-outputs
 sw_spectrum.elf: $(OBJS) ../src/lscript.ld $(USER_OBJS)
 	@echo 'Building target: $@'
 	@echo 'Invoking: ARM v7 gcc linker'
-	arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LD:/Work/Hobby_proj/spectrum_analyzer/vitis_workspace/design_1_wrapper_1/export/design_1_wrapper_1/sw/design_1_wrapper_1/standalone_domain/bsplib/lib -o "sw_spectrum.elf" $(OBJS) $(USER_OBJS) $(LIBS)
+	arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=none -specs=Xilinx.spec -Wl,-T -Wl,../src/lscript.ld -LD:/Work/Hobby_proj/simple_spectrum_analyzer/spectrum_analyzer/vitis_workspace/design_1_wrapper_1/export/design_1_wrapper_1/sw/design_1_wrapper_1/standalone_domain/bsplib/lib -o "sw_spectrum.elf" $(OBJS) $(USER_OBJS) $(LIBS)
 	@echo 'Finished building target: $@'
 	@echo ' '
 

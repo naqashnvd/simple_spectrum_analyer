@@ -95,7 +95,7 @@ int main()
 {
     init_platform();
 
-    set_dds_freq(40*M, 0);
+    set_dds_freq(1*M, 0);
 
 
     print("Hello World! Waiting for a key!!!\n\r");
